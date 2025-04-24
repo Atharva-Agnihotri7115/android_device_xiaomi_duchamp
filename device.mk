@@ -158,6 +158,10 @@ $(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,fal
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
+# MiuiCamera Icon
+PRODUCT_PACKAGES += \
+    MiuiCameraOverlayIcon
+
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.nxp \
