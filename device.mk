@@ -373,3 +373,6 @@ $(call inherit-product, vendor/xiaomi/duchamp/duchamp-vendor.mk)
 
 # Signing
 -include vendor/lineage-priv/keys/keys.mk
+
+# MiuiCamera
+$(call inherit-product-if-exists, device/xiaomi/duchamp-miuicamera/device.mk)
