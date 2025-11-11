@@ -376,3 +376,6 @@ $(call inherit-product, vendor/xiaomi/duchamp/duchamp-vendor.mk)
 
 # MiuiCamera
 $(call inherit-product-if-exists, device/xiaomi/duchamp-miuicamera/device.mk)
+
+# V4A
+$(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
