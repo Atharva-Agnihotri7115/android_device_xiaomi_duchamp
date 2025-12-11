@@ -53,6 +53,7 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libaudioclient_shim.so'),
 
     'odm/bin/hw/vendor.xiaomi.sensor.citsensorservice.aidl': blob_fixup()
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so')
         .add_needed('libui_shim.so'),
 
     'vendor/lib64/hw/audio.primary.mediatek.so': blob_fixup()
@@ -199,6 +200,16 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libcodec2_vndk-v34.so': blob_fixup()
         .replace_needed('libui.so', 'libui-v34.so')
         .replace_needed('android.hardware.media.bufferpool2-V1-ndk.so', 'android.hardware.media.bufferpool2-V2-ndk.so'),
+
+    ('odm/lib64/hw/displayfeature.default.so',
+     'vendor/lib64/hw/mt6897/vendor.mediatek.hardware.pq_aidl-impl.so',
+     'vendor/lib64/libaudiocloudctrl.so',
+     'vendor/lib64/libpqxmlflagparser.so',
+     'vendor/lib64/libpqxmlparser.so',
+     'vendor/lib64/librt_extamp_intf.so',
+     'vendor/lib64/libsilkybrightnesscore.so',
+     'vendor/lib64/mt6897/libmmlpqImpl.so'): blob_fixup()
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
