@@ -32,6 +32,8 @@ lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     ('libmialgo_aio_seg',
      'libmialgo_utils',
+     'vendor.mediatek.hardware.apuware.utils-V1-ndk',
+     'vendor.mediatek.hardware.apuware.utils@2.0',
      'vendor.mediatek.hardware.videotelephony-V1-ndk',): lib_fixup_vendor_suffix,
 }
 
