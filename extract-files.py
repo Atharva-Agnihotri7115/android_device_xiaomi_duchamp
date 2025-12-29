@@ -207,6 +207,9 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/lib64/libsilkybrightnesscore.so',
      'vendor/lib64/mt6897/libmmlpqImpl.so'): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+
+    'vendor/lib64/hw/android.hardware.soundtrigger3-impl.so': blob_fixup()
+        .replace_needed('android.hardware.soundtrigger3-V1-ndk.so', 'android.hardware.soundtrigger3-V3-ndk.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
