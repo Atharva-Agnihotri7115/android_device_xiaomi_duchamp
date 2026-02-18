@@ -57,7 +57,7 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libui_shim.so'),
 
     'vendor/lib64/hw/audio.primary.mediatek.so': blob_fixup()
-        .replace_needed('android.hardware.audio.common-V1-ndk.so', 'android.hardware.audio.common-V2-ndk.so')
+        .replace_needed('android.hardware.bluetooth.audio-V3-ndk.so', 'android.hardware.bluetooth.audio-V3-ndk-v34.so')
         .replace_needed('libalsautils.so', 'libalsautils-v34.so')
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so')
         .binary_regex_replace(b'A2dpsuspendonly', b'A2dpSuspended\x00\x00')
@@ -80,8 +80,9 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/lib64/libarmnn_ndk.mtk.vndk.so'): blob_fixup()
         .add_needed('liblog.so'),
 
-    'vendor/lib64/vendor.mediatek.hardware.bluetooth.audio-V1-ndk.so': blob_fixup()
-        .replace_needed('android.hardware.audio.common-V1-ndk.so', 'android.hardware.audio.common-V2-ndk.so'),
+    ('vendor/lib64/vendor.mediatek.hardware.bluetooth.audio-V1-ndk.so',
+     'vendor/lib64/android.hardware.bluetooth.audio-V3-ndk-v34.so'): blob_fixup()
+        .replace_needed('android.hardware.audio.common-V1-ndk.so', 'android.hardware.audio.common-V4-ndk.so'),
 
     ('vendor/bin/hw/mt6897/android.hardware.graphics.allocator-V2-service-mediatek.mt6897',
      'vendor/lib64/egl/mt6897/libGLES_mali.so',
@@ -210,6 +211,11 @@ blob_fixups: blob_fixups_user_type = {
 
     'vendor/lib64/hw/android.hardware.soundtrigger3-impl.so': blob_fixup()
         .replace_needed('android.hardware.soundtrigger3-V1-ndk.so', 'android.hardware.soundtrigger3-V3-ndk.so'),
+
+    ('vendor/lib64/android.hardware.bluetooth.audio-impl-mediatek.so',
+     'vendor/lib64/hw/audio.bluetooth.default.so',
+     'vendor/lib64/libbluetooth_audio_session_aidl_mtk.so'): blob_fixup()
+        .replace_needed('android.hardware.bluetooth.audio-V3-ndk.so', 'android.hardware.bluetooth.audio-V3-ndk-v34.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
