@@ -50,4 +50,21 @@
 
     <!-- Bottom margin size when fingerprint in display is active -->
     <dimen name="keyguard_indication_margin_bottom">8dp</dimen>
+
+    <!-- Burn in protection -->
+    <bool name="config_statusBarBurnInProtection">true</bool>
+    
+    <integer name="config_shift_interval">60</integer>
+
+    <!-- Maximum vertical offset of statusbar for burn-in protection -->
+    <dimen name="status_bar_offset_max_y">6dp</dimen>
+
+    <!-- Maximum horizontal offset of statusbar for burn-in protection -->
+    <dimen name="status_bar_offset_max_x">6dp</dimen>
+
+    <!-- Maximum horizontal offset of navigation bar for burn-in protection -->
+    <dimen name="navigation_bar_burn_in_offset_max_x">6dp</dimen>
+
+    <!-- Maximum vertical offset of navigation bar for burn-in protection -->
+    <dimen name="navigation_bar_burn_in_offset_max_y">6dp</dimen>
 </resources>
